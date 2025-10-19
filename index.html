@@ -126,19 +126,24 @@
       <p class="muted">Message us for availability, viewing times, or airport pickup. We’ll reply fast.</p>
       <div class="specs">
         <div class="card">
-          <form onsubmit="event.preventDefault(); window.location='mailto:parvizans@gmail.com?subject=Novino%20Motors%20Enquiry&body='+encodeURIComponent(document.getElementById('msg').value);">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your email" required>
-            <textarea id="msg" rows="5" placeholder="Your message"></textarea>
-            <button class="btn btn-primary" type="submit">Send Email</button>
-          </form>
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact" />
+  <p style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+
+  <input type="text" name="name" placeholder="Your name" required />
+  <input type="email" name="email" placeholder="Your email" required />
+  <textarea name="message" rows="5" placeholder="Your message"></textarea>
+  <button class="btn btn-primary" type="submit">Send</button>
+</form>
         </div>
         <div class="card">
           <h3>Contact</h3>
           <p><strong>Phone (NZ):</strong> <a href="tel:+64220100700">+64 22 010 0700</a></p>
           <p><strong>Phone (AU):</strong> <a href="tel:+61493255689">+61 493 255 689</a></p>
           <p><strong>Email:</strong> <a href="mailto:parvizans@gmail.com">parvizans@gmail.com</a></p>
-          <p><strong>Service:</strong> Free pickup from Auckland Airport</p>
+          <p><strong>Service:</strong> Free pickup from Auckland Airport If You Put Deposit for Any Cars</p>
         </div>
       </div>
     </div>
