@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+  .langbar{position:fixed;top:14px;right:14px;z-index:9999}
+  #langSelect{padding:.35rem .6rem;border:1px solid #e2e8f0;border-radius:.5rem;font-weight:600}
+  [dir="rtl"] *{text-align:right}
+</style>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Novino Motors — Affordable Campervans in New Zealand</title>
@@ -70,6 +76,19 @@
   <header class="hero">
     <div class="wrap">
       <span class="badge">Novino Motors • #1 Affordable Camper Conversions</span>
+      <!-- Language dropdown -->
+<div class="langbar" aria-label="Language switch">
+  <select id="langSelect">
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
+    <option value="it">Italiano</option>
+    <option value="es">Español</option>
+    <option value="fa">فارسی</option>
+    <option value="zh">中文</option>
+  </select>
+</div>
+
       <h1>Explore New Zealand with Your Own Home on Wheels</h1>
       <p class="lead">We’re the first and number one company transforming ordinary s into budget‑friendly campervans. Get FREE pickup from Auckland Airport and start your road trip the moment you land.</p>
       <div class="cta">
@@ -119,6 +138,105 @@
       </div>
     </div>
   </section>
+  <script>
+  const translations = {
+    en: {
+      hero_title: "Explore New Zealand with Your Own Home on Wheels",
+      hero_lead: "We’re the first and number one company transforming ordinary vans into budget-friendly campervans. Get FREE pickup from Auckland Airport and start your road trip the moment you land.",
+      cta_whatsapp: "WhatsApp Us",
+      cta_see: "See the Vans",
+      why_title: "Why Novino Motors?",
+      why1_title: "Affordable Freedom",
+      why1_text: "Skip hotels and tour schedules. Own a campervan and choose your sunrise."
+      // add other keys you marked with data-i18n…
+    },
+    fr: {
+      hero_title: "Explorez la Nouvelle-Zélande avec votre maison sur roues",
+      hero_lead: "Nous sommes les premiers à transformer des vans ordinaires en campervans économiques. Prise en charge gratuite depuis l’aéroport d’Auckland.",
+      cta_whatsapp: "WhatsApp",
+      cta_see: "Voir les vans",
+      why_title: "Pourquoi Novino Motors ?",
+      why1_title: "Liberté abordable",
+      why1_text: "Oubliez hôtels et circuits. Choisissez votre lever de soleil."
+    },
+    de: {
+      hero_title: "Entdecke Neuseeland mit deinem Zuhause auf Rädern",
+      hero_lead: "Wir sind die Nr. 1 für preiswerte Camper-Umbauten. Kostenlose Abholung am Flughafen Auckland.",
+      cta_whatsapp: "WhatsApp",
+      cta_see: "Vans ansehen",
+      why_title: "Warum Novino Motors?",
+      why1_title: "Bezahlbare Freiheit",
+      why1_text: "Hotels und Tourpläne? Nicht nötig. Bestimme deinen Sonnenaufgang."
+    },
+    it: {
+      hero_title: "Scopri la Nuova Zelanda con una casa su ruote",
+      hero_lead: "Siamo i primi a trasformare van in camper economici. Pickup gratuito dall’aeroporto di Auckland.",
+      cta_whatsapp: "WhatsApp",
+      cta_see: "Vedi i van",
+      why_title: "Perché Novino Motors?",
+      why1_title: "Libertà conveniente",
+      why1_text: "Dimentica hotel e tour. Scegli tu dove svegliarti."
+    },
+    es: {
+      hero_title: "Explora Nueva Zelanda con tu casa sobre ruedas",
+      hero_lead: "Somos los #1 en convertir furgonetas en camper económicos. Recogida gratis en el aeropuerto de Auckland.",
+      cta_whatsapp: "WhatsApp",
+      cta_see: "Ver furgonetas",
+      why_title: "¿Por qué Novino Motors?",
+      why1_title: "Libertad asequible",
+      why1_text: "Olvida hoteles y tours. Elige tu amanecer."
+    },
+    fa: {
+      hero_title: "نیوزیلند را با خانه‌ای روی چرخ کشف کنید",
+      hero_lead: "ما اولین و برترین شرکت در تبدیل ون‌های ساده به کمپرهای مقرون‌به‌صرفه هستیم. ترنسفر رایگان از فرودگاه آوکلند.",
+      cta_whatsapp: "واتس‌اپ",
+      cta_see: "مشاهده ون‌ها",
+      why_title: "چرا نووینو موتورز؟",
+      why1_title: "آزادی مقرون‌به‌صرفه",
+      why1_text: "هتل را فراموش کنید؛ طلوع خودتان را انتخاب کنید."
+    },
+    zh: {
+      hero_title: "用“移动小家”探索新西兰",
+      hero_lead: "我们是经济型露营车改装第一名。奥克兰机场免费接送，落地即启程。",
+      cta_whatsapp: "WhatsApp 联系",
+      cta_see: "查看车辆",
+      why_title: "为什么选择 Novino Motors？",
+      why1_title: "经济自由",
+      why1_text: "告别酒店与团队行程，自由看日出。"
+    }
+  };
+
+  function setLang(lang) {
+    const t = translations[lang] || translations.en;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.innerHTML = t[key];
+    });
+    localStorage.setItem('site_lang', lang);
+  }
+
+  // dropdown handler
+  const sel = document.getElementById('langSelect');
+  sel.addEventListener('change', () => setLang(sel.value));
+
+  // initial language (remember choice or auto-detect once)
+  const saved = localStorage.getItem('site_lang');
+  if (saved) { sel.value = saved; setLang(saved); }
+  else {
+    const guess = (navigator.language || 'en').toLowerCase();
+    const lang = guess.startsWith('fr') ? 'fr'
+               : guess.startsWith('de') ? 'de'
+               : guess.startsWith('it') ? 'it'
+               : guess.startsWith('es') ? 'es'
+               : guess.startsWith('fa') ? 'fa'
+               : guess.startsWith('zh') ? 'zh'
+               : 'en';
+    sel.value = lang; setLang(lang);
+  }
+</script>
+
 
   <section id="offer">
     <div class="wrap">
