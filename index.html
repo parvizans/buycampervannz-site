@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novino Motors — Affordable Campervans in New Zealand</title>
+  <meta name="description" content="Novino Motors: the first and #1 company transforming ordinary vans into affordable campervans. Free pickup from Auckland Airport. 2005 Mitsubishi campervan for $10,900 NZD." />
+  <link rel="preload" as="image" href="assets/van_01.jpg">
+  <style>
+    :root {
+      --bg:#0b1220; --ink:#0f172a; --card:#ffffff; --muted:#64748b; --accent:#16a34a;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial; color:#0f172a; background:#f8fafc; }
+    header.hero {
+      position: relative; min-height: 70vh; display:grid; place-items:center; color:white;
+      background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)), url('assets/van_01.jpg') center/cover no-repeat;
+    }
+    .wrap { width:min(1100px, 92%); margin:0 auto; }
+    .badge { background:rgba(22,163,74,.95); display:inline-block; padding:.35rem .65rem; border-radius:999px; font-weight:700; letter-spacing:.3px; }
+    h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin:.6rem 0 0; }
+    p.lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); opacity:.95; max-width: 60ch; }
+    .cta { margin-top:1rem; display:flex; flex-wrap:wrap; gap:.8rem; }
+    .btn { text-decoration:none; padding:.9rem 1.1rem; border-radius:.7rem; font-weight:700; display:inline-block; }
+    .btn-primary { background:#16a34a; color:white; }
+    .btn-ghost { border:2px solid rgba(255,255,255,.7); color:white; }
+    section { padding: clamp(2rem, 6vw, 4rem) 0; }
+    .grid-3 { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.2rem; }
+    .card { background:#fff; border-radius:1rem; padding:1.1rem; box-shadow: 0 10px 20px rgba(2,6,23,.06); }
+    .card h3 { margin:.2rem 0 .4rem; }
+    .muted { color:#64748b; }
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:.8rem; }
+    .gallery img { width:100%; height:240px; object-fit:cover; border-radius:.8rem; }
+    .specs { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem; }
+    .specs .spec { background:#0b1220; color:white; border-radius:.9rem; padding:1rem; }
+    .price { font-size:2rem; font-weight:800; color:#16a34a; }
+    footer { background:#0b1220; color:#cbd5e1; padding:2rem 0; }
+    footer a { color:#34d399; text-decoration:none; }
+    form { display:grid; gap:.6rem; }
+    input, textarea { padding:.8rem 1rem; border:1px solid #e5e7eb; border-radius:.6rem; font:inherit; }
+    .tick { color:#16a34a; font-weight:700; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AutoDealer",
+    "name":"Novino Motors",
+    "description":"Affordable campervans in New Zealand. Free pickup from Auckland Airport.",
+    "telephone":"+64 22 010 0700",
+    "address":{"@type":"PostalAddress","addressCountry":"NZ"},
+    "url":"https://example.com"
+  }
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">Novino Motors • #1 Affordable Campervan Conversions</span>
+      <h1>Explore New Zealand with Your Own Home on Wheels</h1>
+      <p class="lead">We’re the first and number one company transforming ordinary vans into budget‑friendly campervans. Get FREE pickup from Auckland Airport and start your road trip the moment you land.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="https://wa.me/64220100700?text=Hi%20Novino%20Motors!%20I%E2%80%99m%20interested%20in%20the%20campervan.">WhatsApp Us</a>
+        <a class="btn btn-ghost" href="#vans">See the Van</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="why">
+    <div class="wrap">
+      <h2>Why Novino Motors?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Affordable Freedom</h3>
+          <p class="muted">Skip hotels and tour schedules. Own a campervan and choose your sunrise.</p>
+        </div>
+        <div class="card">
+          <h3>Airport Pickup</h3>
+          <p class="muted">Free pickup & transport from <strong>Auckland Airport</strong> straight to our car yard.</p>
+        </div>
+        <div class="card">
+          <h3>Tourist‑Ready</h3>
+          <p class="muted">Ideal for backpackers & couples: sleep, cook, and relax anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vans">
+    <div class="wrap">
+      <h2>Featured Campervan</h2>
+      <div class="specs">
+        <div class="spec">
+          <h3>2005 Mitsubishi</h3>
+          <p>Reliable and road‑tested. <span class="muted">283,000 km</span></p>
+          <p class="price">$10,900 NZD</p>
+          <p>✔ Bed & foldable dining table<br/>✔ Rear kitchen with sink & water tanks<br/>✔ Storage cabinets & privacy curtains</p>
+          <a class="btn btn-primary" href="mailto:parvizans@gmail.com?subject=Campervan%20Enquiry%20-%20Novino%20Motors">Email us</a>
+          <a class="btn" href="tel:+64220100700">Call +64 22 010 0700</a>
+        </div>
+        <div class="card">
+          <div class="gallery">
+            <img src="assets/van_01.jpg" alt="Novino Motors campervan image 1"/><img src="assets/van_02.jpg" alt="Novino Motors campervan image 2"/><img src="assets/van_03.jpg" alt="Novino Motors campervan image 3"/><img src="assets/van_04.jpg" alt="Novino Motors campervan image 4"/><img src="assets/van_05.jpg" alt="Novino Motors campervan image 5"/><img src="assets/van_06.jpg" alt="Novino Motors campervan image 6"/><img src="assets/van_07.jpg" alt="Novino Motors campervan image 7"/><img src="assets/van_08.jpg" alt="Novino Motors campervan image 8"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="wrap">
+      <h2>What You Get</h2>
+      <div class="grid-3">
+        <div class="card"><span class="tick">✓</span> Comfortable bed & seating</div>
+        <div class="card"><span class="tick">✓</span> Dining table for meals/work</div>
+        <div class="card"><span class="tick">✓</span> Kitchenette with sink</div>
+        <div class="card"><span class="tick">✓</span> Fresh/grey water tanks</div>
+        <div class="card"><span class="tick">✓</span> Storage cabinets</div>
+        <div class="card"><span class="tick">✓</span> Privacy curtains</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Get in Touch</h2>
+      <p class="muted">Message us for availability, viewing times, or airport pickup. We’ll reply fast.</p>
+      <div class="specs">
+        <div class="card">
+          <form onsubmit="event.preventDefault(); window.location='mailto:parvizans@gmail.com?subject=Novino%20Motors%20Enquiry&body='+encodeURIComponent(document.getElementById('msg').value);">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <textarea id="msg" rows="5" placeholder="Your message"></textarea>
+            <button class="btn btn-primary" type="submit">Send Email</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p><strong>Phone (NZ):</strong> <a href="tel:+64220100700">+64 22 010 0700</a></p>
+          <p><strong>Phone (AU):</strong> <a href="tel:+61493255689">+61 493 255 689</a></p>
+          <p><strong>Email:</strong> <a href="mailto:parvizans@gmail.com">parvizans@gmail.com</a></p>
+          <p><strong>Service:</strong> Free pickup from Auckland Airport</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2025 Novino Motors — Innovative in the campervan industry.</p>
+    </div>
+  </footer>
+</body>
+</html>
