@@ -51,6 +51,20 @@
     "url":"https://example.com"
   }
   </script>
+  <script>
+  // Only auto-detect the first time; respect the user's manual choice afterward
+  (function(){
+    if (!localStorage.getItem('novino_lang')) {
+      const lang = (navigator.language || 'en').toLowerCase();
+      if (lang.startsWith('zh')) setLang('zh');
+      else if (lang.startsWith('fa')) setLang('fa');
+      else if (lang.startsWith('de')) setLang('de');
+      else if (lang.startsWith('fr')) setLang('fr');
+      else setLang('en');
+    }
+  })();
+</script>
+
 </head>
 <body>
   <header class="hero">
