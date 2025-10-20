@@ -6,6 +6,18 @@
   #langSelect{padding:.35rem .6rem;border:1px solid #e2e8f0;border-radius:.5rem;font-weight:600}
   [dir="rtl"] *{text-align:right}
 </style>
+  <style>
+  .van-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .van-card{background:#fff;border-radius:12px;box-shadow:0 10px 20px rgba(2,6,23,.06);padding:12px}
+  .van-card img{width:100%;height:170px;object-fit:cover;border-radius:10px}
+  .van-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center;padding:20px}
+  .van-modal[hidden]{display:none}
+  .van-modal-inner{max-width:900px;width:100%;background:#fff;border-radius:16px;padding:16px}
+  .van-modal .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:8px}
+  .van-modal .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+  .van-modal .close{float:right;border:none;background:transparent;font-size:28px;cursor:pointer}
+</style>
+
   
 
   <meta charset="utf-8" />
@@ -125,6 +137,8 @@
     </div>
   </section>
 
+  
+
   <section id="vans">
     <div class="wrap">
       <h2>Featured Campervan</h2>
@@ -145,6 +159,67 @@
       </div>
     </div>
   </section>
+  <section id="vans">
+  <div class="wrap">
+    <h2 data-i18n="van_list_title">Available Vans</h2>
+    <div class="van-grid">
+      <!-- VAN CARD 1 -->
+      <article class="van-card">
+        <img src="assets/van_01.jpg" alt="2005 Mitsubishi campervan" loading="lazy">
+        <h3>2005 Mitsubishi</h3>
+        <p>283,000 km • $10,900 NZD</p>
+        <button class="btn" onclick="openVan('van-2005-mitsu')">View details</button>
+      </article>
+
+      <!-- VAN CARD 2 (example new car) -->
+      <article class="van-card">
+        <img src="assets/van_02.jpg" alt="2007 Nissan Caravan" loading="lazy">
+        <h3>2007 Nissan Caravan</h3>
+        <p>215,000 km • $11,900 NZD</p>
+        <button class="btn" onclick="openVan('van-2007-nissan')">View details</button>
+      </article>
+      <!-- add more cards the same way -->
+    </div>
+
+    <!-- VAN MODAL / DETAILS (hidden, one per van) -->
+    <div id="van-2005-mitsu" class="van-modal" hidden>
+      <div class="van-modal-inner">
+        <button class="close" onclick="closeVan('van-2005-mitsu')">×</button>
+        <h3>2005 Mitsubishi</h3>
+        <p>283,000 km • $10,900 NZD</p>
+        <ul>
+          <li>Bed + foldable table</li>
+          <li>Rear kitchen, sink, fresh/grey water tanks</li>
+          <li>Storage cabinets, privacy curtains</li>
+        </ul>
+        <div class="gallery">
+          <img src="assets/van_01.jpg" loading="lazy">
+          <img src="assets/van_03.jpg" loading="lazy">
+          <img src="assets/van_04.jpg" loading="lazy">
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%202005%20Mitsubishi">WhatsApp</a>
+      </div>
+    </div>
+
+    <div id="van-2007-nissan" class="van-modal" hidden>
+      <div class="van-modal-inner">
+        <button class="close" onclick="closeVan('van-2007-nissan')">×</button>
+        <h3>2007 Nissan Caravan</h3>
+        <p>215,000 km • $11,900 NZD</p>
+        <ul>
+          <li>Bed, table, storage</li>
+          <li>Kitchen sink + water tanks</li>
+        </ul>
+        <div class="gallery">
+          <img src="assets/nissan_01.jpg" loading="lazy">
+          <img src="assets/nissan_02.jpg" loading="lazy">
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%202007%20Nissan%20Caravan">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   <script>
   const translations = {
     en: {
@@ -194,8 +269,8 @@
       why1_text: "Olvida hoteles y tours. Elige tu amanecer."
     },
     fa: {
-      hero_title: "نیوزیلند را با خانه‌ای روی چرخ کشف کنید",
-      hero_lead: "ما اولین و برترین شرکت در تبدیل ون‌های ساده به کمپرهای مقرون‌به‌صرفه هستیم. ترنسفر رایگان از فرودگاه آوکلند.",
+      hero_title: "نیوزیلند را با کمپرون‌های مقرون‌ به‌ صرفه کشف کنید",
+      hero_lead: "ما اولین و برترین شرکت در تبدیل ون‌های ساده به کمپرون‌های مقرون‌ به‌ صرفه هستیم. ترنسفر رایگان از فرودگاه آوکلند.",
       cta_whatsapp: "واتس‌اپ",
       cta_see: "مشاهده ون‌ها",
       why_title: "چرا نووینو موتورز؟",
@@ -287,6 +362,11 @@
       </div>
     </div>
   </section>
+  <script>
+  function openVan(id){ document.getElementById(id).hidden = false; }
+  function closeVan(id){ document.getElementById(id).hidden = true; }
+</script>
+
 
   <footer>
     <div class="wrap">
