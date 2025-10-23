@@ -164,61 +164,63 @@
     <h2 data-i18n="van_list_title">Available Vans</h2>
     <div class="van-grid">
       
-      <!-- VAN CARD 1 -->
-      <article class="van-card">
-        <img src="assets/van_01.jpg" alt="2007 Nissan Serena " loading="lazy">
-        <h3>2007 Nissan Serena</h3>
-        <p>180,000 km • $12,500 NZD</p>
-        <button class="btn" onclick="openVan('van-2007 NISSAN Serena')">View details</button>
-      </article>
+     <!-- VAN CARD 1 -->
+<article class="van-card">
+  <img src="assets/van_01.jpg" alt="2007 Nissan Serena" loading="lazy">
+  <h3>2007 Nissan Serena</h3>
+  <p>180,000 km • $12,500 NZD</p>
+  <button class="btn" type="button" onclick="openVan('van-2007-nissan-serena')">View details</button>
+</article>
 
-      <!-- VAN CARD 2 (example new car) -->
-      <article class="van-card">
-        <img src="assets/van_02.jpg" alt="1986 Nissan Caravan" loading="lazy">
-        <h3>1986 Nissan Caravan</h3>
-        <p>300,000 km • $13,900 NZD</p>
-        <button class="btn" onclick="openVan('van-1986 Nissan Caravan')">View details</button>
-      </article>
+<!-- VAN CARD 2 -->
+<article class="van-card">
+  <img src="assets/van_02.jpg" alt="1986 Nissan Caravan" loading="lazy">
+  <h3>1986 Nissan Caravan</h3>
+  <p>300,000 km • $13,900 NZD</p>
+  <button class="btn" type="button" onclick="openVan('van-1986-nissan-caravan')">View details</button>
+</article>
+
       <!-- add more cards the same way -->
     </div>
 
     <!-- VAN MODAL / DETAILS (hidden, one per van) -->
-    <div id="van-2007 Nissan Serena" class="van-modal" hidden>
-      <div class="van-modal-inner">
-        <button class="close" onclick="closeVan('van-2007 Nissan Serena')">×</button>
-        <h3>2007 Nissan Serena</h3>
-        <p>180,000 km • $12,500 NZD</p>
-        <ul>
-          <li>Bed + foldable table</li>
-          <li>Rear kitchen, sink, fresh/grey water tanks</li>
-          <li>Storage cabinets, privacy curtains</li>
-        </ul>
-        <div class="gallery">
-          <img src="assets/van_01.jpg" loading="lazy">
-          <img src="assets/van_03.jpg" loading="lazy">
-          <img src="assets/van_04.jpg" loading="lazy">
-        </div>
-        <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%202005%20Mitsubishi">WhatsApp</a>
-      </div>
+<!-- VAN MODAL / DETAILS (match the IDs above exactly) -->
+<div id="van-2007-nissan-serena" class="van-modal" hidden>
+  <div class="van-modal-inner">
+    <button class="close" type="button" onclick="closeVan('van-2007-nissan-serena')">×</button>
+    <h3>2007 Nissan Serena</h3>
+    <p>180,000 km • $12,500 NZD</p>
+    <ul>
+      <li>Bed + foldable table</li>
+      <li>Rear kitchen, sink, fresh/grey water tanks</li>
+      <li>Storage cabinets, privacy curtains</li>
+    </ul>
+    <div class="gallery">
+      <img src="assets/van_01.jpg" loading="lazy" alt="">
+      <img src="assets/van_03.jpg" loading="lazy" alt="">
+      <img src="assets/van_04.jpg" loading="lazy" alt="">
     </div>
-
-    <div id="van-1986 nissan Carevan" class="van-modal" hidden>
-      <div class="van-modal-inner">
-        <button class="close" onclick="closeVan('van-1986 nissan Carevan')">×</button>
-        <h3>1986 Nissan Carevan</h3>
-        <p>300,000 km • $13,900 NZD</p>
-        <ul>
-          <li>Bed, table, storage</li>
-          <li>Kitchen sink + water tanks</li>
-        </ul>
-        <div class="gallery">
-          <img src="assets/nissan_11.jpg" loading="lazy">
-          <img src="assets/nissan_12.jpg" loading="lazy">
-        </div>
-        <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%202007%20Nissan%20Caravan">WhatsApp</a>
-      </div>
-    </div>
+    <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%202007%20Nissan%20Serena">WhatsApp</a>
   </div>
+</div>
+
+<div id="van-1986-nissan-caravan" class="van-modal" hidden>
+  <div class="van-modal-inner">
+    <button class="close" type="button" onclick="closeVan('van-1986-nissan-caravan')">×</button>
+    <h3>1986 Nissan Caravan</h3>
+    <p>300,000 km • $13,900 NZD</p>
+    <ul>
+      <li>Bed, table, storage</li>
+      <li>Kitchen sink + water tanks</li>
+    </ul>
+    <div class="gallery">
+      <img src="assets/nissan_11.jpg" loading="lazy" alt="">
+      <img src="assets/nissan_12.jpg" loading="lazy" alt="">
+    </div>
+    <a class="btn btn-primary" href="https://wa.me/64220100700?text=Interested%20in%201986%20Nissan%20Caravan">WhatsApp</a>
+  </div>
+</div>
+
 </section>
 
   <script>
