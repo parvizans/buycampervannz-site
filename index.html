@@ -14,6 +14,25 @@
   #langSelect{padding:.35rem .6rem;border:1px solid #e2e8f0;border-radius:.5rem;font-weight:600}
   [dir="rtl"] *{text-align:right}
 
+  /* Modal container */
+.van-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;padding:16px;z-index:9999}
+.van-modal[hidden]{display:none}
+
+/* The white box: allow vertical scroll on small screens */
+.van-modal-inner{
+  width:min(900px,96vw);
+  max-height:90vh;                 /* <— critical */
+  overflow-y:auto;                 /* <— critical */
+  -webkit-overflow-scrolling:touch;/* smooth iOS scroll */
+  background:#fff;color:#0f172a;border-radius:16px;padding:16px;
+}
+
+/* Optional: gallery grid */
+.van-modal .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:10px}
+.van-modal .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+.van-modal .close{float:right;border:0;background:transparent;font-size:28px;cursor:pointer}
+
+
    
 
   .van-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
