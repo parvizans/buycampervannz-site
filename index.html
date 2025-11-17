@@ -507,10 +507,21 @@
   </section>
  
 
-  git add .
-git commit -m "Add images for 2007 Nissan Serena"
-git push
+<script>
+  function openVan(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';   // stop background scrolling
+  }
 
+  function closeVan(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.setAttribute('hidden', '');
+    document.body.style.overflow = '';         // allow scrolling again
+  }
+</script>
 
 
   <footer>
